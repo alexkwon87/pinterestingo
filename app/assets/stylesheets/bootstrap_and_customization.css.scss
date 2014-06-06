@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Maven+Pro);
+
+$body-bg:  #1abc9c;
+$font-family-sans-sarif: 'Josefin+Sans|Maven+Pro)';
+$navbar-default-bg: #34495e;
+$navbar-default-link-color: white;
+$brand-primary: #34495e;
+
+
+@import 'bootstrap';
+
+.center {
+	text-align: center;
+}
+
+.navbar-brand {
+	font-wight: bold;
+}
