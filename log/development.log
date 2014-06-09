@@ -7741,3 +7741,478 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
   Rendered layouts/_header.html.erb (0.5ms)
 Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 06:17:52 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 06:17:58 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-06-09 06:18:01 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-06-09 06:18:10 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FqxUP4n3X6mpqKgGViz1SVkY1Pz00YirYrHAb4d420s=", "user"=>{"email"=>"alexkwon87@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (8.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'alexkwon87@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-06-09 11:18:10.209428"], ["last_sign_in_at", "2014-06-08 20:33:06.843148"], ["sign_in_count", 3], ["updated_at", "2014-06-09 11:18:10.213090"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 06:18:10 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePins (20140609112357)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140609112357"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:26:45 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.1ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (10.1ms)
+Completed 200 OK in 276ms (Views: 273.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 06:26:46 -0500
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:27:30 -0500
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.2ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 60ms (Views: 58.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2014-06-09 06:27:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 06:27:31 -0500
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2014-06-09 06:31:21 -0500
+Processing by PinsController#new as HTML
+  Rendered pins/_form.html.erb (8.2ms)
+  Rendered pins/new.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:31:23 -0500
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.1ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2014-06-09 06:31:44 -0500
+Processing by PinsController#new as HTML
+  Rendered pins/_form.html.erb (3.0ms)
+  Rendered pins/new.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2014-06-09 06:31:51 -0500
+Processing by PinsController#new as HTML
+  Rendered pins/_form.html.erb (3.0ms)
+  Rendered pins/new.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LpATehjUjhIdlioSuSYsxIdPoevP0/jZJpJzHkCV+Ac=", "pin"=>{"description"=>"this is cool!!"}, "commit"=>"Create Pin"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pins" ("created_at", "description", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-06-09 11:31:57.658483"], ["description", "this is cool!!"], ["updated_at", "2014-06-09 11:31:57.658483"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 24ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pins/show.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 06:31:57 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 06:32:01 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1/edit" for 127.0.0.1 at 2014-06-09 06:32:10 -0500
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPin Load (0.1ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pins/_form.html.erb (3.0ms)
+  Rendered pins/edit.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/pins/1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LpATehjUjhIdlioSuSYsxIdPoevP0/jZJpJzHkCV+Ac=", "pin"=>{"description"=>"this is cool!!"}, "commit"=>"Update Pin", "id"=>"1"}
+  [1m[35mPin Load (0.1ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pins/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 06:32:17 -0500
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:32:21 -0500
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2014-06-09 06:32:22 -0500
+Processing by PinsController#new as HTML
+  Rendered pins/_form.html.erb (3.2ms)
+  Rendered pins/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:33:33 -0500
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.2ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2014-06-09 06:33:40 -0500
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPin Load (0.1ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pins/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2014-06-09 06:33:42 -0500
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.2ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 06:34:15 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms)
